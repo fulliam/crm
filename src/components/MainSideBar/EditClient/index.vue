@@ -13,8 +13,8 @@
             <input
                 id="edit-phone"
                 v-model="localClient.phone"
-                placeholder="+7-(ххх)-ххх-хх-хх"
-				v-mask="'+7-(###)-###-##-##'"
+                placeholder="+X-(XXX)-XXX-XX-XX"
+				v-mask="'+#-(###)-###-##-##'"
             />
         </label>
 

@@ -14,7 +14,7 @@
                 id="add-phone"
                 v-model="newClient.phone"
                 placeholder="+7-(ХХХ)-ХХХ-ХХ-ХХ"
-				v-mask="'+7-(###)-###-##-##'"
+				v-mask="'+#-(###)-###-##-##'"
             />
         </label>
 
