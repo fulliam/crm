@@ -1,0 +1,12 @@
+.client-info {
+	color: rgba(240, 157, 0, 0.79);
+	text-align: start;
+	display: grid;
+	justify-content: center;
+	background-color: #3b3b3b;
+	font-size: 22px;
+
+	& span {
+		color: #ccc;
+	}
+}

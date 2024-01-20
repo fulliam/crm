@@ -1,0 +1,228 @@
+@import '../../Breakpoints/index.scss';
+
+.sidebar__main {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  box-shadow: inset 0px 0px 10px black;
+
+  table {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+	box-shadow: 0px 0px 10px black;
+
+	tr {
+		cursor: grab;
+	}
+
+    th, td {
+      padding: 10px;
+      border: 2px solid #1e1e1e;
+      text-align: left;
+      background-color: #f5f5f5;
+    }
+
+	th:first-child {
+		border-top-left-radius: 10px;
+	}
+
+	th:last-child {
+		border-top-right-radius: 10px;
+	}
+
+	tr:last-child {
+		td:first-child {
+			border-bottom-left-radius: 10px;
+		}
+
+		td:last-child {
+			border-bottom-right-radius: 10px;
+		}
+	}
+
+	tr.dragging {
+		td {
+			border: 2px dashed #ccc;
+			border-left: none;
+			border-right: none;
+		}
+	}
+	tr.over {
+		box-shadow: 0px -5px #007bff;
+	}
+
+	& .client-name {
+		cursor: pointer;
+
+		&:hover {
+            background: #c38106;
+			color: #fff;
+		}
+	}
+
+	& .client-action {
+		display: flex;
+		justify-content: center;
+	}
+  }
+
+  button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+	border: 2px solid #1e1e1e;
+	border-radius: 10px;
+
+	&.btn {
+		&-delete {
+			background-color: #e81b00;
+
+			&:hover {
+				background-color: #961100;
+			}
+		}
+
+		&-edit {
+			background-color: #007bff;
+
+			&:hover {
+				background-color: #0056b3;
+			}
+		}
+	}
+
+	& span {
+		display: flex;
+		height: 32px;
+		width: 32px;
+		background-size: cover;
+
+		&.icon {
+			&-delete {
+				background-image: url('../../assets/icons/delete.png');
+			}
+
+			&-edit {
+				background-image: url('../../assets/icons/edit.png');
+			}
+		}
+	}
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+@include large-desktop {
+	.sidebar__main {
+	  padding: 30px;
+  
+	  table {
+		font-size: 22px;
+  
+		th, td {
+		  padding: 15px;
+		}
+	  }
+  
+	  button {
+		padding: 7px 14px;
+		font-size: 20px;
+	  }
+	}
+}
+
+@include desktop-to-large-desktop {
+  .sidebar__main {
+    padding: 25px;
+
+    table {
+      font-size: 20px;
+
+      th, td {
+        padding: 12px;
+      }
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 18px;
+    }
+  }
+}
+
+@include desktop {
+	.sidebar__main {
+	  padding: 20px;
+  
+	  table {
+		font-size: 18px;
+  
+		th, td {
+		  padding: 10px;
+		}
+	  }
+  
+	  button {
+		padding: 5px 10px;
+		font-size: 16px;
+	  }
+	}
+}
+
+@include tablet-to-desktop{
+  .sidebar__main {
+    padding: 15px;
+
+    table {
+      font-size: 16px;
+
+      th, td {
+        padding: 7px;
+      }
+    }
+
+    button {
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+  }
+}
+
+@include mobile-to-tablet {
+	.sidebar__main {
+	  padding: 10px;
+  
+	  table {
+		font-size: 14px;
+		margin-top: 50px;
+  
+		th, td {
+		  padding: 5px;
+		}
+	  }
+  
+	  button {
+		padding: 3px 7px;
+		font-size: 12px;
+	  }
+	}
+}
+
+@include mobile {
+  .sidebar__main {
+
+    table {
+      margin-top: 50px;
+    }
+  }
+}
